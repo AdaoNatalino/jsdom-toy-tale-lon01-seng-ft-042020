@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 12
+      "likes": 39
     },
     {
       "id": 2,
@@ -46,13 +46,13 @@
       "id": 8,
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
-      "likes": 3
+      "likes": 10
     },
     {
       "name": "Adao Natalino",
       "image": "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-9/62407578_2335555256526311_6539892804074602496_n.jpg?_nc_cat=110&_nc_sid=09cbfe&_nc_ohc=JK3auNRcE5kAX8WD0-P&_nc_ht=scontent-lhr8-1.xx&oh=880c027bfea94a5f7c475f32af21cbea&oe=5EF84284",
       "id": 9,
-      "likes": 4
+      "likes": 21
     }
   ]
 }

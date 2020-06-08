@@ -49,31 +49,10 @@ function createDiv(toy) {
   div.append(p);
   div.append(button);
 
-  button.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    let object = {
-    likes: toy.likes + 1
-    };
-    
-    let configObject = {
-    method: 'PATCH',
-    headers: {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json'
-    },
-    body: JSON.stringify(object)
-    };
-    e.target.parentNode.remove();
-
-    fetch(`${urlToys}/${toy.id}`, configObject)
-    .then(resp => resp.json())
-    .then(data => addDiv(data))
-    .catch(error => console.log(error));
-  });
-
+  button.addEventListener('click', (e) => upLikes(e, toy));
   return div
 }
+
 
 function addDiv(toy) {
   const toyCollection = document.getElementById('toy-collection')
@@ -106,3 +85,31 @@ function createToy() {
     .catch(error => console.log(error));
   })
 }
+
+function upLikes(e, toy) {
+  e.preventDefault();
+  // debugger
+  let object = {
+  likes: toy.likes + 1
+  };
+  
+  let configObject = {
+  method: 'PATCH',
+  headers: {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+  },
+  body: JSON.stringify(object)
+  };
+
+  fetch(`${urlToys}/${toy.id}`, configObject)
+  .then(resp => resp.json())
+  .then(function(){
+    let newLikes = parseInt(e.target.previousSibling.innerText); ; 
+    e.target.previousSibling.innerText =  `${++ newLikes} Likes`;
+  })
+  .catch(error => console.log(error));
+};
+
+
+
